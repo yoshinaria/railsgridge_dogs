@@ -16,6 +16,9 @@
       <tr>
         <td><b><%= dog.name %></b></td>
         <td><b><%= dog.age %></b></td>
+        <td>
+          <%= image_tag(dog.picture_url(:thumb))  unless dog.picture_url(:thumb).blank? %>
+        </td>
         <td><%= link_to 'Show', dog %></td>
         <td><%= link_to 'Edit', edit_dog_path(dog) %></td>
         <td><%= link_to 'Destroy', dog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
