@@ -5,6 +5,8 @@
   <%= @dog.name %>
   <strong>Age:</strong>
   <%= @dog.age %>
+  <strong>Image:</strong>
+  <%= image_tag(@dog.picture_url(:thumb), class: "image-responsive") unless @dog.picture_url(:thumb).blank?  %>
 </p>
 
 <%= link_to 'Edit', edit_dog_path(@dog) %> |

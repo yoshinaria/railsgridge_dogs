@@ -1,18 +1,20 @@
 
 <p id="notice"><%= notice %></p>
 
-<table class="table-striped col-xs-12">
+<table class="table-striped col-md-12">
   <tbody>
     <% @dogs.each do |dog| %>
       <tr>
-        <td>
+        <td class="col-md-2">
           <%= image_tag(dog.picture_url(:thumb), class: "image-responsive") unless dog.picture_url(:thumb).blank?  %>
         </td>
-        <td><b><%= dog.name %></b></td>
-        <td><b><%= dog.age %></b></td>
-        <td><%= link_to 'Show', dog %></td>
-        <td><%= link_to 'Edit', edit_dog_path(dog) %></td>
-        <td><%= link_to 'Destroy', dog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <div>
+          <td class="col-md-2"><b><%= dog.name %></b></td>
+          <td class="col-md-2"><b><%= dog.age %></b></td class="col-md-2">
+          <td class="col-md-2"><%= link_to 'Show', dog %></td class="col-md-2">
+          <td class="col-md-2"><%= link_to 'Edit', edit_dog_path(dog) %></td class="col-md-2">
+          <td class="col-md-2"><%= link_to 'Destroy', dog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </div>
       </tr>
     <% end %>
   </tbody>
