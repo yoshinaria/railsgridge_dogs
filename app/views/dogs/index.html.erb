@@ -1,22 +1,15 @@
+
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Dogs</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Age</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
+<table class="table-striped col-xs-12">
   <tbody>
     <% @dogs.each do |dog| %>
       <tr>
+        <td>
+          <%= image_tag(dog.picture_url(:thumb), class: "image-responsive") unless dog.picture_url(:thumb).blank?  %>
+        </td>
         <td><b><%= dog.name %></b></td>
         <td><b><%= dog.age %></b></td>
-  
         <td><%= link_to 'Show', dog %></td>
         <td><%= link_to 'Edit', edit_dog_path(dog) %></td>
         <td><%= link_to 'Destroy', dog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
