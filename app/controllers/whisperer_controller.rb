@@ -1,0 +1,2 @@
+class WhispererController < ApplicationController
+end
